@@ -8,7 +8,7 @@ const withMongoDB: (handler: NextApiHandler) => NextApiHandler = (
 		return handler(req, res);
 	}
 	await mongoose.connect(
-		`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zyjy2.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+		`${process.env.DB_LINK}`,
 		{
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
